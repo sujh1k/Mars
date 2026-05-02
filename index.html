@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Марс - Червона планета</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Проєкт про Марс</p>
+      <h1>Марс: Червона планета та наші майбутні кроки</h1>
+      <p>Ознайомся з основними фактами, історією місій, улюбленими марсіанськими місцями та кратерами, які створилися після зіткнень астероїдів.</p>
+      <div class="hero__actions">
+        <button id="show-fact">Показати факт</button>
+        <a href="#craters" class="button button--secondary">Показати кратери</a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="mars"></div>
+      <div class="rocket"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section about" id="about">
+      <div class="section__inner">
+        <div>
+          <h2>Що таке Марс?</h2>
+          <p>Марс — четверта планета від Сонця, відома як Червона планета через багатий залізовий оксид на поверхні. Тут є гігантські вулкани, глибокі каньйони та шанси колись знайти сліди води.</p>
+        </div>
+        <aside class="fact-card" id="fact-card">
+          Натисни «Показати факт», щоб побачити цікаві факти про Марс.
+        </aside>
+      </div>
+    </section>
+
+    <section class="section missions" id="missions">
+      <div class="section__inner">
+        <h2>Марсіанські місії</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Марс-2020</h3>
+            <p>Тут працює ровер Perseverance і вертоліт Ingenuity, які досліджують поверхню Марсу та шукають органічні сполуки.</p>
+          </article>
+          <article class="card">
+            <h3>Curiosity</h3>
+            <p>Ровер Curiosity вивчає хімічний склад марсіанського ґрунту та шукає умови, придатні для життя.</p>
+          </article>
+          <article class="card">
+            <h3>Марс Одисея</h3>
+            <p>Орбітальний апарат, який досліджує атмосферу, рельєф і магнітні поля Червоного світу.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section map" id="map">
+      <div class="section__inner">
+        <h2>Визначні місця на Марсі</h2>
+        <div class="map-grid">
+          <article class="map-card">
+            <h3>Олімп Монс</h3>
+            <p>Найвищий вулкан у Сонячній системі.</p>
+          </article>
+          <article class="map-card">
+            <h3>Долина Марінер</h3>
+            <p>Гігантська система каньйонів, що простягається понад 4 000 км.</p>
+          </article>
+          <article class="map-card">
+            <h3>Південний полюс</h3>
+            <p>Тут зберігаються льодові шапки з водяного льоду та сухого льоду.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section craters" id="craters">
+      <div class="section__inner">
+        <h2>Кратери Марсу</h2>
+        <p>Оберіть кратер, щоб дізнатися, коли він утворився, яким астероїдом його створено, який має розмір і з якого матеріалу складається дно.</p>
+        <div class="mars-map">
+          <div class="mars-map__planet" aria-label="Схематична карта Марсу">
+            <button class="map-marker map-marker--jezero" data-crater="jezero" title="Кратер Єзеро"></button>
+            <button class="map-marker map-marker--gale" data-crater="gale" title="Кратер Ґейл"></button>
+            <button class="map-marker map-marker--hellas" data-crater="hellas" title="Hellas Planitia"></button>
+            <button class="map-marker map-marker--argyre" data-crater="argyre" title="Argyre"></button>
+          </div>
+          <div class="map-note">Схематична позиція кратерів на Марсі. Натисни на точку, щоб побачити деталі.</div>
+        </div>
+        <div class="crater-grid" id="crater-grid">
+          <button class="crater-card" data-crater="jezero">Кратер Єзеро</button>
+          <button class="crater-card" data-crater="gale">Кратер Ґейл</button>
+          <button class="crater-card" data-crater="hellas">Hellas Planitia</button>
+          <button class="crater-card" data-crater="argyre">Argyre</button>
+        </div>
+        <div class="crater-detail" id="crater-detail">
+          <h3>Оберіть кратер</h3>
+          <p>Натисніть на один із карток вище або на маркер на карті, щоб побачити деталі про падіння астероїда та утворення кратера.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Проєкт про Марс — освітня веб-сторінка з фактажем та атмосферою Червоного світу.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
