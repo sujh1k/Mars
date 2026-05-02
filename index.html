@@ -39,19 +39,8 @@
     <section class="section missions" id="missions">
       <div class="section__inner">
         <h2>Марсіанські місії</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Марс-2020</h3>
-            <p>Тут працює ровер Perseverance і вертоліт Ingenuity, які досліджують поверхню Марсу та шукають органічні сполуки.</p>
-          </article>
-          <article class="card">
-            <h3>Curiosity</h3>
-            <p>Ровер Curiosity вивчає хімічний склад марсіанського ґрунту та шукає умови, придатні для життя.</p>
-          </article>
-          <article class="card">
-            <h3>Марс Одисея</h3>
-            <p>Орбітальний апарат, який досліджує атмосферу, рельєф і магнітні поля Червоного світу.</p>
-          </article>
+        <div class="rover-grid" id="rover-grid">
+          <!-- Динамічно заповнюється з main.js -->
         </div>
       </div>
     </section>
@@ -89,11 +78,14 @@
           </div>
           <div class="map-note">Схематична позиція кратерів на Марсі. Натисни на точку, щоб побачити деталі.</div>
         </div>
+        <div class="sort-controls">
+          <label>Сортувати за:</label>
+          <button class="sort-btn sort-btn--active" data-sort="name">Назвою</button>
+          <button class="sort-btn" data-sort="largest">Найбільші</button>
+          <button class="sort-btn" data-sort="smallest">Найменші</button>
+        </div>
         <div class="crater-grid" id="crater-grid">
-          <button class="crater-card" data-crater="jezero">Кратер Єзеро</button>
-          <button class="crater-card" data-crater="gale">Кратер Ґейл</button>
-          <button class="crater-card" data-crater="hellas">Hellas Planitia</button>
-          <button class="crater-card" data-crater="argyre">Argyre</button>
+          <!-- Динамічно заповнюється з main.js -->
         </div>
         <div class="crater-detail" id="crater-detail">
           <h3>Оберіть кратер</h3>
