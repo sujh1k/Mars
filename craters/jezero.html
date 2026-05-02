@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кратер Єзеро - Дім Perseverance</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .breadcrumb {
+      padding: 1rem 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .breadcrumb a {
+      color: var(--accent-soft);
+      text-decoration: underline;
+    }
+    .crater-header {
+      padding: 3rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .crater-header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin: 1rem 0;
+    }
+    .crater-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem;
+    }
+    .crater-image {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 16px;
+      margin: 2rem auto;
+      display: block;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+    .crater-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .spec {
+      text-align: center;
+    }
+    .spec-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .spec-value {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent-soft);
+    }
+    .section-content {
+      margin: 2.5rem 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+    }
+    .section-content h3 {
+      margin-top: 0;
+      color: var(--accent-soft);
+    }
+    .section-content p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 3rem 0;
+      gap: 1rem;
+    }
+    .nav-btn {
+      flex: 1;
+      padding: 1rem;
+      border-radius: 12px;
+      background: rgba(255, 82, 0, 0.1);
+      border: 1px solid rgba(255, 82, 0, 0.3);
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .nav-btn:hover {
+      background: rgba(255, 82, 0, 0.2);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    <a href="../index.html">← Назад до Марсу</a>
+  </div>
+
+  <div class="crater-header">
+    <p style="color: var(--accent-soft); margin: 0 0 1rem;">🤖 Місце посадки НАСА</p>
+    <h1>Кратер Єзеро</h1>
+    <p>Дім марсохода Perseverance - пошук давнього життя</p>
+  </div>
+
+  <main class="crater-content">
+    <img src="https://images-assets.nasa.gov/image/PIA23195/PIA23195~thumb.jpg" alt="Кратер Єзеро" class="crater-image">
+
+    <div class="crater-specs">
+      <div class="spec">
+        <div class="spec-label">Діаметр</div>
+        <div class="spec-value">45 км</div>
+      </div>
+      <div class="spec">
+        <div class="spec-label">Глибина</div>
+        <div class="spec-value">~3 км</div>
+      </div>
+      <div class="spec">
+        <div class="spec-label">Вік</div>
+        <div class="spec-value">3,6 млрд років</div>
+      </div>
+      <div class="spec">
+        <div class="spec-label">Астероїд</div>
+        <div class="spec-value">~1,5 км</div>
+      </div>
+    </div>
+
+    <section class="section-content">
+      <h3>📍 Загальна інформація</h3>
+      <p>
+        Кратер Єзеро (Jezero) - це невеликий кратер видалення на північній помешканости Марсу, знаходящийся в межах давньої дельти річки. Назва "Jezero" походить від сербського/боснійського слова, що означає "озеро".
+      </p>
+      <p>
+        Цей кратер став найвибагливішим місцем для посадки марсохода Perseverance НАСА в 2021 році. Вибір місця було впроваджено тому, що тут існують докази давніх озер і можливість збереження органічних речовин, які могли б свідчити про древнє життя на Марсі.
+      </p>
+    </section>
+
+    <section class="section-content">
+      <h3>💧 Докази води</h3>
+      <p>
+        Спектрометричні дослідження показали, що в Єзеро існують:
+      </p>
+      <ul>
+        <li><strong>Давні озера</strong> - датовані приблизно 3,9-3,8 млрд років тому</li>
+        <li><strong>Глинисті мінерали</strong> - утворюються в контакті води з породою</li>
+        <li><strong>Карбонати</strong> - залишки від давніх водних систем</li>
+        <li><strong>Органічні речовини</strong> - молекули, потенційно пов'язані з життям</li>
+      </ul>
+      <p>
+        Всі ці ознаки вказують на те, що в кратері Єзеро колись існували сприятливі для життя умови.
+      </p>
+    </section>
+
+    <section class="section-content">
+      <h3>🤖 Perseverance на Марсі</h3>
+      <p>
+        Марсохід Perseverance приземлився в кратері Єзеро 18 лютого 2021 року. Основні цілі:
+      </p>
+      <ul>
+        <li><strong>Пошук слідів древнього мікробного життя</strong></li>
+        <li><strong>Вивчення клімату Марсу</strong></li>
+        <li><strong>Дослідження геології кратера</strong></li>
+        <li><strong>Збір зразків для повернення на Землю</strong></li>
+        <li><strong>Тестування технологій для людських місій</strong></li>
+      </ul>
+    </section>
+
+    <section class="section-content">
+      <h3>🪨 Геологія Єзеро</h3>
+      <p>
+        Внутрішність кратера складається з:
+      </p>
+      <ul>
+        <li>Глинистих мінералів (монтморилоніт, іліт)</li>
+        <li>Карбонатів (вапняк, доломіт)</li>
+        <li>Силікатних мінералів</li>
+        <li>Хемічно альтерованих порід</li>
+      </ul>
+      <p>
+        Ці мінерали був утворені в присутності води, що робить Єзеро ідеальним місцем для пошуку органічних молекул та можливих потренованої мікробного життя.
+      </p>
+    </section>
+
+    <section class="section-content">
+      <h3>📊 Цікаві факти</h3>
+      <ul>
+        <li><strong>Дельта річки</strong> - в кратері видна давня Дельта російської річки</li>
+        <li><strong>Мари стародавної крайізма</strong> - докази озер та річок</li>
+        <li><strong>Вертоліт Ingenuity</strong> - намагавання первого польолту на іншій планеті</li>
+        <li><strong>Зразки Марсу</strong> - перші зразки для повернення на Землю доставлені</li>
+      </ul>
+    </section>
+
+    <div class="nav-buttons">
+      <a href="../index.html" class="nav-btn">← Назад до Марсу</a>
+      <a href="gale.html" class="nav-btn">Наступний кратер →</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>🚀 Марс: Червона планета - Освітній веб-проект | Дані NASA</p>
+  </footer>
+</body>
+</html>
