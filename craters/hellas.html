@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hellas Planitia - Найбільший кратер Марсу</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .breadcrumb {
+      padding: 1rem 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .breadcrumb a {
+      color: var(--accent-soft);
+      text-decoration: underline;
+    }
+    .crater-header {
+      padding: 3rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .crater-header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin: 1rem 0;
+    }
+    .crater-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem;
+    }
+    .crater-image {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 16px;
+      margin: 2rem auto;
+      display: block;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+    .crater-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .spec {
+      text-align: center;
+    }
+    .spec-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .spec-value {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent-soft);
+    }
+    .section-content {
+      margin: 2.5rem 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+    }
+    .section-content h3 {
+      margin-top: 0;
+      color: var(--accent-soft);
+    }
+    .section-content p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 3rem 0;
+      gap: 1rem;
+    }
+    .nav-btn {
+      flex: 1;
+      padding: 1rem;
+      border-radius: 12px;
+      background: rgba(255, 82, 0, 0.1);
+      border: 1px solid rgba(255, 82, 0, 0.3);
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .nav-btn:hover {
+      background: rgba(255, 82, 0, 0.2);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    <a href="../index.html">← Назад до Марсу</a>
+  </div>
+
+  <div class="crater-header">
+    <p style="color: var(--accent-soft); margin: 0 0 1rem;">🌍 Кратер Марсу</p>
+    <h1>Hellas Planitia</h1>
+    <p>Найбільший ударний басейн у Сонячній системі</p>
+  </div>
+
+  <main class="crater-content">
+    <img src="https://images-assets.nasa.gov/image/PIA00404/PIA00404~thumb.jpg" alt="Hellas Planitia" class="crater-image">
+
+    <div class="crater-specs">
+      <div class="spec">
+        <div class="spec-label">Діаметр</div>
+        <div class="spec-value">2300 км</div>
+      </div>
+      <div class="spec">
+        <div class="spec-label">Глибина</div>
+        <div class="spec-value">~9 км</div>
+      </div>
+      <div class="spec">
+        <div class="spec-label">Вік</div>
+        <div class="spec-value">4,1 млрд років</div>
+      </div>
+      <div class="spec">
+        <div class="spec-label">Астероїд</div>
+        <div class="spec-value">~25 км</div>
+      </div>
+    </div>
+
+    <section class="section-content">
+      <h3>📖 Загальна інформація</h3>
+      <p>
+        Hellas Planitia - це найбільший ударний басейн у Сонячній системі! На Марсі це друге за глибиною місце після басейну Утопія. Кратер утворився в результаті удару гігантського астероїда діаметром близько 25 км приблизно 4,1 млрд років тому.
+      </p>
+      <p>
+        Назва "Hellas" походить від давньогрецької назви Греції. Басейн розташований у південній півкулі Марсу на координатах близько 45°S, 71°E. Розмір басейну становить 2300 км у діаметрі, що робить його одним з найбільших кратерів у Сонячній системі.
+      </p>
+    </section>
+
+    <section class="section-content">
+      <h3>🌠 Утворення кратера</h3>
+      <p>
+        Удар гігантського астероїда діаметром близько 25 км створив величезну воронку. Енергія удару була настільки мощною, що розплавила хімічні породи поверхні і виялась матеріал на відстань сотень кілометрів.
+      </p>
+      <p>
+        На дні басейну накопилися давні льодові та водні відклади. Через пізніший вулканізм та вітрову ерозію структура кратера змінилася, але основна форма лишилась видима на сучасних знімках з орбіти.
+      </p>
+    </section>
+
+    <section class="section-content">
+      <h3>🪨 Геологія та матеріал</h3>
+      <p>
+        Дно Hellas Planitia складається з суміші:
+      </p>
+      <ul>
+        <li>Пилу та дрібного піску</li>
+        <li>Льоду (водяного та сухого)</li>
+        <li>Базальтових порід</li>
+        <li>Осадкових мінералів</li>
+      </ul>
+      <p>
+        Спектрометричні дослідження з орбіти показують наявність оксидів заліза (причина червоного кольору Марсу) та силікатних мінералів. Область багата на цікаві геологічні структури для дослідження.
+      </p>
+    </section>
+
+    <section class="section-content">
+      <h3>🔬 Наукова цінність</h3>
+      <p>
+        Hellas Planitia - це важливе місце для вивчення:
+      </p>
+      <ul>
+        <li><strong>Катастрофічних ударних подій</strong> - найбільшої ударної геальбе на Марсі</li>
+        <li><strong>Древньої історії Марсу</strong> - дослідження стародавніх геологічних шарів</li>
+        <li><strong>Можливості водяного льоду</strong> - залежі льоду на дні басейну</li>
+        <li><strong>Вулканізму і еволюції планети</strong> - слідів пізнішого вулканізму</li>
+      </ul>
+    </section>
+
+    <section class="section-content">
+      <h3>🛰️ Спостереження зі спутників</h3>
+      <p>
+        Hellas Planitia спостерігається багатьма марсіанськими орбітальними апаратами:
+      </p>
+      <ul>
+        <li><strong>Mars Reconnaissance Orbiter (MRO)</strong> - детальні знімки з высокою роздільною здатністю</li>
+        <li><strong>MAVEN</strong> - дослідження атмосфери над кратером</li>
+        <li><strong>Mars Express</strong> - europea інструменти для вивчення льоду</li>
+        <li><strong>HIRISE</strong> - фотокамера з найвищою роздільною здатністю</li>
+      </ul>
+    </section>
+
+    <div class="nav-buttons">
+      <a href="../index.html" class="nav-btn">← Назад до Марсу</a>
+      <a href="argyre.html" class="nav-btn">Наступний кратер →</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>🚀 Марс: Червона планета - Освітній веб-проект | Дані NASA</p>
+  </footer>
+</body>
+</html>

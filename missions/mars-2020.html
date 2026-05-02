@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Місія NASA Mars 2020 - Perseverance</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .breadcrumb { padding: 1rem 3rem; color: var(--muted); }
+    .breadcrumb a { color: var(--accent-soft); text-decoration: underline; }
+    .mission-header { padding: 3rem; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    .mission-header h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 1rem 0; }
+    .mission-content { max-width: 1000px; margin: 0 auto; padding: 3rem; }
+    .mission-image { width: 100%; max-width: 500px; border-radius: 16px; margin: 2rem auto; display: block; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); }
+    .mission-specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; padding: 2rem; background: rgba(255, 255, 255, 0.04); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); }
+    .spec { text-align: center; }
+    .spec-label { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .spec-value { font-size: 1.8rem; font-weight: 600; color: var(--accent-soft); }
+    .section-content { margin: 2.5rem 0; padding: 2rem; background: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--accent); border-radius: 8px; }
+    .section-content h3 { margin-top: 0; color: var(--accent-soft); }
+    .section-content p { color: var(--muted); line-height: 1.8; }
+    .nav-btn { display: inline-block; padding: 1rem 2rem; border-radius: 12px; background: rgba(255, 82, 0, 0.1); border: 1px solid rgba(255, 82, 0, 0.3); color: var(--text); cursor: pointer; text-decoration: none; transition: all 0.3s ease; margin-top: 2rem; }
+    .nav-btn:hover { background: rgba(255, 82, 0, 0.2); transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    <a href="../index.html">← Назад до Марсу</a>
+  </div>
+
+  <div class="mission-header">
+    <p style="color: var(--accent-soft); margin: 0 0 1rem;">🚀 НАСА</p>
+    <h1>Mars 2020 - Perseverance</h1>
+    <p>Пошук давнього життя та підготовка для людей</p>
+  </div>
+
+  <main class="mission-content">
+    <img src="https://images-assets.nasa.gov/image/PIA23618/PIA23618~thumb.jpg" alt="Perseverance" class="mission-image">
+
+    <div class="mission-specs">
+      <div class="spec">
+        <div class="spec-label">Запущено</div>
+        <div class="spec-value">30.07.2020</div>
+      </div>
+      <div class="spec">
+        <div class="spec-label">Посадка</div>
+        <div class="spec-value">18.02.2021</div>
+      </div>
+      <div class="spec">
+        <div class="spec-label">Місце</div>
+        <div class="spec-value">Кратер Єзеро</div>
+      </div>
+      <div class="spec">
+        <div class="spec-label">Статус</div>
+        <div class="spec-value">🟢 Активна</div>
+      </div>
+    </div>
+
+    <section class="section-content">
+      <h3>📖 Про місію</h3>
+      <p>
+        NASA Mars 2020 (Perseverance) - це сучасна наукова лабораторія, отправлена на Марс для пошуку давніх слідів мікробного життя. Марсохід виконує свою місію в кратері Єзеро, який містить докази давніх озер та річок.
+      </p>
+    </section>
+
+    <section class="section-content">
+      <h3>🔧 Основні датчики:</h3>
+      <ul>
+        <li><strong>RAMI</strong> - гастрін для вивчення кисню</li>
+        <li><strong>Mastcam-Z</strong> - кольорова гайбун високої роздільної здатності</li>
+        <li><strong>PIXL</strong> - рентгенівський спектрометр</li>
+        <li><strong>SHERLOC</strong> - лазерний спектрометр для органічних молекул</li>
+        <li><strong>RAD</strong> - датчик радіації</li>
+        <li><strong>Drill</strong> - буріння до 3 метрів глибини</li>
+      </ul>
+    </section>
+
+    <section class="section-content">
+      <h3>🎯 Цілі дослідження:</h3>
+      <ul>
+        <li>Пошук органічних молекул та лосків давного життя</li>
+        <li>Вивчення геології кратера Єзеро</li>
+        <li>Дослідження атмосфери та клімату</li>
+        <li>Тестування технологій для людських місій (MOXIE - виробництво кисню)</li>
+        <li>Збір марсіанських зразків для повернення на Землю</li>
+      </ul>
+    </section>
+
+    <section class="section-content">
+      <h3>🚁 Ingenuity Helicopter</h3>
+      <p>
+        Perseverance везе з собою вертоліт Ingenuity - перший апарат, що зробив керований політ на іншій планеті. Це демонструє технології для майбутніх дослідження.
+      </p>
+    </section>
+
+    <a href="../index.html" class="nav-btn">← Назад до Марсу</a>
+  </main>
+
+  <footer class="footer">
+    <p>🚀 Марс: Червона планета - Освітній веб-проект | Дані NASA JPL</p>
+  </footer>
+</body>
+</html>
