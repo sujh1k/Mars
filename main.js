@@ -19,7 +19,7 @@ const FACTS = [
 const STATS = [
   { label: 'Відстань від Сонця', value: '228 млн км', icon: '☀️' },
   { label: 'Діаметр планети', value: '6 779 км', icon: '🔴' },
-  { label: 'Тривалість доби', value: '24 год 37 хв', icon: '🕐' },
+  { label: 'Тривалість доби (Сол)', value: '24 год 37 хв', icon: '🕐' },
   { label: 'Тривалість року', value: '687 днів', icon: '📅' },
   { label: 'Температура', value: '-60°C середня', icon: '🌡️' },
   { label: 'Супутники', value: '2 (Фобос, Деймос)', icon: '🌑' },
@@ -499,8 +499,32 @@ document.getElementById('atm-grid').innerHTML = ATM.map(a => `
 `).join('');
 
 // ── Moons ──────────────────────────────────────
-document.getElementById('moons-grid').innerHTML = Object.values(MOONS).map(m => `
-  <div class="moon-card fade-in">
+function showMoonDetail(moonKey) {
+  const m = MOONS[moonKey];
+  if (!m) return;
+  const body = document.getElementById('detail-body');
+  body.innerHTML = `
+    <div class="detail-header">
+      <p style="color:var(--accent-soft);margin:0">🌑 Супутник Марсу</p>
+      <h1>${m.name}</h1>
+      <p>${m.emoji}</p>
+    </div>
+    <div class="detail-specs">
+      <div class="detail-spec"><div class="detail-spec__label">Діаметр</div><div class="detail-spec__value">${m.diameter}</div></div>
+      <div class="detail-spec"><div class="detail-spec__label">Орбітальний період</div><div class="detail-spec__value">${m.orbit}</div></div>
+      <div class="detail-spec"><div class="detail-spec__label">Відстань від поверхні</div><div class="detail-spec__value">${m.distance}</div></div>
+    </div>
+    <div class="detail-section">
+      <h3>📖 Опис</h3>
+      <p style="color:var(--muted);line-height:1.7">${m.description}</p>
+    </div>
+  `;
+  document.getElementById('detail-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('moons-grid').innerHTML = Object.entries(MOONS).map(([key, m]) => `
+  <div class="moon-card fade-in" data-moon="${key}" style="cursor:pointer;">
     <div class="moon-card__emoji">${m.emoji}</div>
     <h3>${m.name}</h3>
     <div class="moon-card__stats">
@@ -509,9 +533,32 @@ document.getElementById('moons-grid').innerHTML = Object.values(MOONS).map(m => 
       <div class="moon-stat">Відстань: <strong>${m.distance}</strong></div>
     </div>
     <p>${m.description}</p>
+    <div style="color:var(--accent-soft);font-size:0.85rem;margin-top:1rem">🔍 Натисни для деталей</div>
   </div>
 `).join('');
+
+document.getElementById('moons-grid').addEventListener('click', e => {
+  const card = e.target.closest('[data-moon]');
+  if (card) showMoonDetail(card.dataset.moon);
+});
+
 document.querySelectorAll('.moon-card.fade-in').forEach(el => observer.observe(el));
+
+// ── Moons Mini-Site Tabs ────────────────────
+document.getElementById('moons-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('.moons-tab-btn');
+  if (!btn) return;
+  
+  const moon = btn.dataset.moon;
+  document.querySelectorAll('.moons-tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.moons-detail-content').forEach(c => c.classList.add('hidden'));
+  
+  btn.classList.add('active');
+  document.getElementById(`moons-detail-${moon}`)?.classList.remove('hidden');
+});
+
+// ── Observe moon detail section ──
+document.querySelectorAll('.moons-comparison, .moons-detail-content').forEach(el => observer.observe(el));
 
 // ── Scientists ─────────────────────────────────
 document.getElementById('scientists-grid').innerHTML = SCIENTISTS.map(s => `
@@ -684,14 +731,7 @@ document.getElementById('crater-grid').addEventListener('click', e => {
   if (CRATERS[key]) renderCraterQuickDetail({ key, ...CRATERS[key] });
 });
 
-document.querySelector('.mars-map__planet').addEventListener('click', e => {
-  const marker = e.target.closest('[data-crater]');
-  if (!marker) return;
-  const key = marker.dataset.crater;
-  if (CRATERS[key]) {
-    renderCraterQuickDetail({ key, ...CRATERS[key] });
-  }
-});
+
 
 document.addEventListener('click', e => {
   const btn = e.target.closest('.sort-btn');

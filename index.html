@@ -124,7 +124,146 @@
   </div>
 </section>
 
-<!-- Scientists -->
+<!-- Moons Mini-Site -->
+<section class="section moons-detail" id="moons-minisite" style="background: linear-gradient(135deg, rgba(255,82,0,0.05) 0%, rgba(255,138,75,0.02) 100%)">
+  <div class="section__inner">
+    <p class="section__label fade-in">Орбітальні супутники</p>
+    <h2 class="fade-in">Супутники Марсу</h2>
+    <p class="section__lead fade-in">Фобос і Деймос — два загадкові світи, що танцюють навколо Червоної планети.</p>
+    
+    <div class="moons-tabs fade-in" id="moons-tabs">
+      <button class="moons-tab-btn active" data-moon="phobos">🌑 Фобос</button>
+      <button class="moons-tab-btn" data-moon="deimos">🌕 Деймос</button>
+    </div>
+
+    <div class="moons-detail-content" id="moons-detail-phobos">
+      <div class="moons-detail-grid">
+        <div class="moons-detail-visual">
+          <div class="moon-circle moon-circle--phobos"></div>
+          <p style="text-align:center;margin-top:1rem;color:var(--muted);font-size:0.9rem">Орбітальний період: 7 год 39 хв</p>
+        </div>
+        <div class="moons-detail-info">
+          <h3>Фобос — Близький супутник</h3>
+          <div class="moon-specs">
+            <div class="moon-spec">
+              <div class="moon-spec__icon">⌀</div>
+              <div class="moon-spec__label">Діаметр</div>
+              <div class="moon-spec__value">22,2 км</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">📍</div>
+              <div class="moon-spec__label">Відстань від Марсу</div>
+              <div class="moon-spec__value">6 000 км</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">🔄</div>
+              <div class="moon-spec__label">Орбітальний період</div>
+              <div class="moon-spec__value">7 год 39 хв</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">🌡️</div>
+              <div class="moon-spec__label">Композиція</div>
+              <div class="moon-spec__value">С-тип астероїд</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="moon-scientific-info">
+        <h4>🔬 Наукові факти</h4>
+        <ul class="moon-facts">
+          <li><strong>Унікальна орбіта:</strong> Фобос — єдиний супутник в Сонячній системі, який обертається швидше, ніж планета. На Марсі він сходить на заході й заходить на сході.</li>
+          <li><strong>Приливні сили:</strong> Мар розриває Фобос! Він наближається на 1,8 метра щоséculo. Через ~50 млн років Фобос або зіткнеться з Марсом, або розпаде на кільце.</li>
+          <li><strong>Форма:</strong> Нерегулярна картопляна форма через низьку гравітацію. На Фобосі немає атмосфери й температури до -112°C.</li>
+          <li><strong>Дослідження:</strong> Найлегше досяжний для людини об'єкт Сонячної системи поза Землею й Місяцем.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="moons-detail-content hidden" id="moons-detail-deimos">
+      <div class="moons-detail-grid">
+        <div class="moons-detail-visual">
+          <div class="moon-circle moon-circle--deimos"></div>
+          <p style="text-align:center;margin-top:1rem;color:var(--muted);font-size:0.9rem">Орбітальний період: 30 год 18 хв</p>
+        </div>
+        <div class="moons-detail-info">
+          <h3>Деймос — Далекий супутник</h3>
+          <div class="moon-specs">
+            <div class="moon-spec">
+              <div class="moon-spec__icon">⌀</div>
+              <div class="moon-spec__label">Діаметр</div>
+              <div class="moon-spec__value">12,6 км</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">📍</div>
+              <div class="moon-spec__label">Відстань від Марсу</div>
+              <div class="moon-spec__value">23 460 км</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">🔄</div>
+              <div class="moon-spec__label">Орбітальний період</div>
+              <div class="moon-spec__value">30 год 18 хв</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">🌡️</div>
+              <div class="moon-spec__label">Композиція</div>
+              <div class="moon-spec__value">D-тип астероїд</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="moon-scientific-info">
+        <h4>🔬 Наукові факти</h4>
+        <ul class="moon-facts">
+          <li><strong>Втеча:</strong> На відміну від Фобоса, Деймос поступово віддаляється від Марсу з прискоренням 0,002 см/рік — як Місяць від Землі!</li>
+          <li><strong>Видимість:</strong> Видно як яскраву зірку, але не як диск. Дуже важко спостерігати від поверхні.</li>
+          <li><strong>Форма:</strong> Округліша за Фобос, але все ще нерегулярна. Найменший супутник з двох.</li>
+          <li><strong>Вік:</strong> Можливо, дуже старий — захоплений астероїд з пояса астероїдів между Марсом і Юпітером.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="moons-comparison fade-in">
+      <h3 style="margin-bottom:2rem">📊 Порівняння Фобоса та Деймоса</h3>
+      <div class="comparison-table">
+        <div class="comp-row">
+          <div class="comp-header">Характеристика</div>
+          <div class="comp-header">Фобос</div>
+          <div class="comp-header">Деймос</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Діаметр</div>
+          <div class="comp-cell">22,2 км</div>
+          <div class="comp-cell">12,6 км</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Відстань від Марсу</div>
+          <div class="comp-cell">6 000 км</div>
+          <div class="comp-cell">23 460 км</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Орбітальний період</div>
+          <div class="comp-cell">7 год 39 хв</div>
+          <div class="comp-cell">30 год 18 хв</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Тип астероїда</div>
+          <div class="comp-cell">С-тип</div>
+          <div class="comp-cell">D-тип</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Форма</div>
+          <div class="comp-cell">Іррегулярна</div>
+          <div class="comp-cell">Іррегулярна</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Майбутнє</div>
+          <div class="comp-cell bold">Зіткнення/Кільцо</div>
+          <div class="comp-cell">Втеча</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section scientists" id="scientists" style="background: linear-gradient(to bottom, var(--bg), var(--bg2))">
   <div class="section__inner">
     <p class="section__label fade-in">Біографії</p>
@@ -161,15 +300,7 @@
     <h2 class="fade-in">Кратери Марсу</h2>
     <p class="section__lead fade-in">12 найвидатніших кратерів — від мікроскопічного Вікторія до гігантського Hellas Planitia.</p>
 
-    <div class="mars-map fade-in">
-      <div class="mars-map__planet" aria-label="Схема кратерів">
-        <button class="map-marker map-marker--jezero" data-crater="jezero" title="Єзеро"></button>
-        <button class="map-marker map-marker--gale" data-crater="gale" title="Ґейл"></button>
-        <button class="map-marker map-marker--hellas" data-crater="hellas" title="Hellas"></button>
-        <button class="map-marker map-marker--argyre" data-crater="argyre" title="Argyre"></button>
-      </div>
-      <p class="map-note">Натисни на точку для швидкого перегляду</p>
-    </div>
+
 
     <div class="craters-controls fade-in">
       <div class="search-bar">
