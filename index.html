@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Марс — Червона Планета</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<!-- Navbar -->
+<nav class="nav">
+  <div class="nav__logo">🔴 <span>МАРС</span></div>
+  <ul class="nav__links">
+    <li><a href="#about">Планета</a></li>
+    <li><a href="#scientists">Науковці</a></li>
+    <li><a href="#timeline">Хронологія</a></li>
+    <li><a href="#missions">Місії</a></li>
+    <li><a href="#craters">Кратери</a></li>
+    <li><a href="#gallery">Галерея</a></li>
+    <li><a href="#future">Майбутнє</a></li>
+  </ul>
+  <button class="nav__fact-btn" id="fact-btn">✦ Факт</button>
+  <button class="nav__hamburger" id="hamburger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Fact banner -->
+<div class="fact-banner">
+  <span class="fact-banner__label">✦ Факт дня</span>
+  <span id="fact-text">Марс — четверта планета від Сонця. Натисни «Факт» щоб дізнатися більше.</span>
+</div>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero__content">
+    <p class="hero__eyebrow">Дослідження Червоної Планети</p>
+    <h1>Марс:<br>Наступний рубіж<br>людства</h1>
+    <p class="hero__desc">Четверта планета від Сонця — місце гігантських вулканів, глибоких каньйонів і, можливо, давнього мікробного життя. Дізнайся всі факти.</p>
+    <div class="hero__actions">
+      <a href="#missions" class="btn btn--primary">🚀 Місії на Марс</a>
+      <a href="#craters" class="btn btn--ghost">🪨 Кратери</a>
+    </div>
+  </div>
+  <div class="hero__visual">
+    <div class="planet-wrap">
+      <div class="orbit-ring"></div>
+      <div class="mars-planet"></div>
+      <div class="planet-stat planet-stat--1">
+        <span>Діаметр</span>
+        <strong>6 779 км</strong>
+      </div>
+      <div class="planet-stat planet-stat--2">
+        <span>Супутники</span>
+        <strong>Фобос & Деймос</strong>
+      </div>
+      <div class="planet-stat planet-stat--3">
+        <span>Відстань від Сонця</span>
+        <strong>228 млн км</strong>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Stats bar -->
+<div class="statsbar">
+  <div class="statsbar__grid" id="stats-grid"></div>
+</div>
+
+<!-- About -->
+<section class="section about" id="about">
+  <div class="section__inner">
+    <p class="section__label fade-in">Про планету</p>
+    <h2 class="fade-in">Що таке Марс?</h2>
+    <div class="tabs fade-in" id="about-tabs">
+      <button class="tab-btn active" data-tab="general">🔴 Загальне</button>
+      <button class="tab-btn" data-tab="atmosphere">🌬️ Атмосфера</button>
+      <button class="tab-btn" data-tab="geology">🪨 Геологія</button>
+      <button class="tab-btn" data-tab="moons">🌑 Супутники</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-general">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p>Марс — четверта планета від Сонця і другий за розміром із земноподібних планет. Його характерний червоний колір зумовлений залізним оксидом (Fe₂O₃) — по суті, планета вкрита іржею.</p>
+          <p>Рік на Марсі триває 687 земних днів, а доба — 24 год 37 хв. Сила тяжіння становить лише 38% від земної: людина вагою 80 кг важила б там усього 30 кг.</p>
+          <p>Олімп Монс — найвищий вулкан у Сонячній системі (21,9 км), а Valles Marineris — найдовша система каньйонів (4 000 км). Водночас Марс — місце найпотужніших пилових бур серед усіх планет.</p>
+        </div>
+        <div class="about-text fade-in">
+          <p>Марс — головний кандидат для пошуку позаземного життя. Ровери знайшли органічні молекули, сліди давніх озер і річок, а підповерхневий лід підтверджений радарними вимірюваннями.</p>
+          <p>NASA планує першу пілотовану місію у 2030-х. SpaceX розробляє Starship для комерційних польотів на Марс — і в кінцевому підсумку для колонізації планети.</p>
+          <p>Незважаючи на суворий клімат (-60°C, тонка атмосфера), Марс — найдосяжніша з планет для колонізації: відстань менша, ніж до Юпітера чи Венери.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-atmosphere">
+      <p class="section__lead" style="margin-bottom:1.5rem">Атмосфера Марсу у 100 разів тонша від земної і майже повністю складається з вуглекислого газу.</p>
+      <div class="atm-grid" id="atm-grid"></div>
+    </div>
+
+    <div class="tab-panel" id="tab-geology">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p><strong>Вулкани:</strong> Марс має найвищі вулкани Сонячної системи. Олімп Монс (21,9 км) і три вулкани Tharsis Montes — приблизно у 2-3 рази вищі за Еверест.</p>
+          <p><strong>Каньйони:</strong> Valles Marineris простягається на 4 000 км — для порівняння, Великий каньйон у США лише 446 км. Глибина — до 7 км.</p>
+          <p><strong>Полюси:</strong> Обидва полюси вкриті льодовими шапками. Північна — переважно водяний лід, південна — водяний лід і сухий лід (заморожений CO₂).</p>
+        </div>
+        <div class="about-text fade-in">
+          <p><strong>Вода:</strong> Мільярди років тому на Марсі були океани і річки. Сьогодні вода існує у вигляді льоду під поверхнею та на полюсах.</p>
+          <p><strong>Магнітне поле:</strong> На відміну від Землі, Марс не має глобального магнітного поля — тому атмосфера поступово здувається сонячним вітром.</p>
+          <p><strong>Кратери:</strong> Поверхня Марсу вкрита тисячами кратерів від астероїдів — від мікроскопічних до гігантських басейнів діаметром понад 2000 км.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-moons">
+      <p class="section__lead" style="margin-bottom:1.5rem">Марс має два маленьких супутники — Фобос і Деймос. Вони, ймовірно, є захопленими астероїдами з пояса астероїдів.</p>
+      <div class="moons-grid" id="moons-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Moons Mini-Site -->
+<section class="section moons-detail" id="moons-minisite" style="background: linear-gradient(135deg, rgba(255,82,0,0.05) 0%, rgba(255,138,75,0.02) 100%)">
+  <div class="section__inner">
+    <p class="section__label fade-in">Орбітальні супутники</p>
+    <h2 class="fade-in">Супутники Марсу</h2>
+    <p class="section__lead fade-in">Фобос і Деймос — два загадкові світи, що танцюють навколо Червоної планети.</p>
+    
+    <div class="moons-tabs fade-in" id="moons-tabs">
+      <button class="moons-tab-btn active" data-moon="phobos">🌑 Фобос</button>
+      <button class="moons-tab-btn" data-moon="deimos">🌕 Деймос</button>
+    </div>
+
+    <div class="moons-detail-content" id="moons-detail-phobos">
+      <div class="moons-detail-grid">
+        <div class="moons-detail-visual">
+          <div class="moon-circle moon-circle--phobos"></div>
+          <p style="text-align:center;margin-top:1rem;color:var(--muted);font-size:0.9rem">Орбітальний період: 7 год 39 хв</p>
+        </div>
+        <div class="moons-detail-info">
+          <h3>Фобос — Близький супутник</h3>
+          <div class="moon-specs">
+            <div class="moon-spec">
+              <div class="moon-spec__icon">⌀</div>
+              <div class="moon-spec__label">Діаметр</div>
+              <div class="moon-spec__value">22,2 км</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">📍</div>
+              <div class="moon-spec__label">Відстань від Марсу</div>
+              <div class="moon-spec__value">6 000 км</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">🔄</div>
+              <div class="moon-spec__label">Орбітальний період</div>
+              <div class="moon-spec__value">7 год 39 хв</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">🌡️</div>
+              <div class="moon-spec__label">Композиція</div>
+              <div class="moon-spec__value">С-тип астероїд</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="moon-scientific-info">
+        <h4>🔬 Наукові факти</h4>
+        <ul class="moon-facts">
+          <li><strong>Унікальна орбіта:</strong> Фобос — єдиний супутник в Сонячній системі, який обертається швидше, ніж планета. На Марсі він сходить на заході й заходить на сході.</li>
+          <li><strong>Приливні сили:</strong> Мар розриває Фобос! Він наближається на 1,8 метра щоséculo. Через ~50 млн років Фобос або зіткнеться з Марсом, або розпаде на кільце.</li>
+          <li><strong>Форма:</strong> Нерегулярна картопляна форма через низьку гравітацію. На Фобосі немає атмосфери й температури до -112°C.</li>
+          <li><strong>Дослідження:</strong> Найлегше досяжний для людини об'єкт Сонячної системи поза Землею й Місяцем.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="moons-detail-content hidden" id="moons-detail-deimos">
+      <div class="moons-detail-grid">
+        <div class="moons-detail-visual">
+          <div class="moon-circle moon-circle--deimos"></div>
+          <p style="text-align:center;margin-top:1rem;color:var(--muted);font-size:0.9rem">Орбітальний період: 30 год 18 хв</p>
+        </div>
+        <div class="moons-detail-info">
+          <h3>Деймос — Далекий супутник</h3>
+          <div class="moon-specs">
+            <div class="moon-spec">
+              <div class="moon-spec__icon">⌀</div>
+              <div class="moon-spec__label">Діаметр</div>
+              <div class="moon-spec__value">12,6 км</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">📍</div>
+              <div class="moon-spec__label">Відстань від Марсу</div>
+              <div class="moon-spec__value">23 460 км</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">🔄</div>
+              <div class="moon-spec__label">Орбітальний період</div>
+              <div class="moon-spec__value">30 год 18 хв</div>
+            </div>
+            <div class="moon-spec">
+              <div class="moon-spec__icon">🌡️</div>
+              <div class="moon-spec__label">Композиція</div>
+              <div class="moon-spec__value">D-тип астероїд</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="moon-scientific-info">
+        <h4>🔬 Наукові факти</h4>
+        <ul class="moon-facts">
+          <li><strong>Втеча:</strong> На відміну від Фобоса, Деймос поступово віддаляється від Марсу з прискоренням 0,002 см/рік — як Місяць від Землі!</li>
+          <li><strong>Видимість:</strong> Видно як яскраву зірку, але не як диск. Дуже важко спостерігати від поверхні.</li>
+          <li><strong>Форма:</strong> Округліша за Фобос, але все ще нерегулярна. Найменший супутник з двох.</li>
+          <li><strong>Вік:</strong> Можливо, дуже старий — захоплений астероїд з пояса астероїдів между Марсом і Юпітером.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="moons-comparison fade-in">
+      <h3 style="margin-bottom:2rem">📊 Порівняння Фобоса та Деймоса</h3>
+      <div class="comparison-table">
+        <div class="comp-row">
+          <div class="comp-header">Характеристика</div>
+          <div class="comp-header">Фобос</div>
+          <div class="comp-header">Деймос</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Діаметр</div>
+          <div class="comp-cell">22,2 км</div>
+          <div class="comp-cell">12,6 км</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Відстань від Марсу</div>
+          <div class="comp-cell">6 000 км</div>
+          <div class="comp-cell">23 460 км</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Орбітальний період</div>
+          <div class="comp-cell">7 год 39 хв</div>
+          <div class="comp-cell">30 год 18 хв</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Тип астероїда</div>
+          <div class="comp-cell">С-тип</div>
+          <div class="comp-cell">D-тип</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Форма</div>
+          <div class="comp-cell">Іррегулярна</div>
+          <div class="comp-cell">Іррегулярна</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell bold">Майбутнє</div>
+          <div class="comp-cell bold">Зіткнення/Кільцо</div>
+          <div class="comp-cell">Втеча</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section scientists" id="scientists" style="background: linear-gradient(to bottom, var(--bg), var(--bg2))">
+  <div class="section__inner">
+    <p class="section__label fade-in">Біографії</p>
+    <h2 class="fade-in">Люди, які відкрили Марс</h2>
+    <p class="section__lead fade-in">Від давніх астрономів до сучасних підприємців — ці вчені та новатори змінили наше розуміння Червоної планети.</p>
+    <div class="scientists-grid" id="scientists-grid"></div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="section" id="timeline">
+  <div class="section__inner">
+    <p class="section__label fade-in">Від давнини до майбутнього</p>
+    <h2 class="fade-in">Хронологія дослідження</h2>
+    <p class="section__lead fade-in">4 000 років спостережень — від вавилонських жерців до SpaceX Starship.</p>
+    <div class="timeline" id="timeline-list"></div>
+  </div>
+</section>
+
+<!-- Missions -->
+<section class="section missions" id="missions" style="background: linear-gradient(to bottom, var(--bg), var(--bg2))">
+  <div class="section__inner">
+    <p class="section__label fade-in">Дослідники поверхні</p>
+    <h2 class="fade-in">Марсіанські місії</h2>
+    <p class="section__lead fade-in">Чотири марсоходи, що залишили свій слід на Червоній планеті.</p>
+    <div class="rover-grid" id="rover-grid"></div>
+  </div>
+</section>
+
+<!-- Craters -->
+<section class="section craters" id="craters">
+  <div class="section__inner">
+    <p class="section__label fade-in">Сліди від астероїдів</p>
+    <h2 class="fade-in">Кратери Марсу</h2>
+    <p class="section__lead fade-in">12 найвидатніших кратерів — від мікроскопічного Вікторія до гігантського Hellas Planitia.</p>
+
+
+
+    <div class="craters-controls fade-in">
+      <div class="search-bar">
+        <span class="search-bar__icon">🔍</span>
+        <input type="text" id="crater-search" placeholder="Пошук кратера...">
+      </div>
+      <div class="sort-controls">
+        <button class="sort-btn sort-btn--active" data-sort="name">А–Я</button>
+        <button class="sort-btn" data-sort="largest">Найбільші</button>
+        <button class="sort-btn" data-sort="smallest">Найменші</button>
+      </div>
+    </div>
+
+    <div class="crater-grid" id="crater-grid"></div>
+    <div class="crater-detail" id="crater-detail">
+      <p style="color:var(--muted);text-align:center;padding:1rem 0">Натисни на кратер або маркер на карті, щоб побачити деталі.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section" id="gallery" style="background: var(--bg2)">
+  <div class="section__inner">
+    <p class="section__label fade-in">Фото NASA</p>
+    <h2 class="fade-in">Галерея Марсу</h2>
+    <p class="section__lead fade-in">Реальні знімки з марсіанських місій.</p>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<!-- Future -->
+<section class="section" id="future">
+  <div class="section__inner">
+    <p class="section__label fade-in">Що буде далі</p>
+    <h2 class="fade-in">Майбутні місії</h2>
+    <p class="section__lead fade-in">Найближчі десятиліття визначать долю людства на Марсі.</p>
+    <div class="future-grid" id="future-grid"></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__logo">🔴 <span>МАРС</span> — Освітній проект</div>
+    <div>Всі фото: NASA / JPL-Caltech</div>
+  </div>
+</footer>
+
+<!-- Detail Overlay -->
+<div id="detail-overlay" class="detail-overlay">
+  <div class="detail-overlay__content">
+    <button class="detail-overlay__close" id="detail-close">✕ Закрити</button>
+    <div id="detail-body"></div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
