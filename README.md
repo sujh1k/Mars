@@ -245,3 +245,4 @@ python -m http.server 8000
 **Мета**: Популяризація космонавтики та науки про Марс 🌍🚀
 # logirace
 # logirace
+# logirace
