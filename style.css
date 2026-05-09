@@ -1,0 +1,116 @@
+:root {
+  --bg: #030305;
+  --bg2: #0a0a10;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+  --text: #f0f0f0;
+  --muted: #a0a0b0;
+  --accent: #ff4d00;
+  --accent-glow: rgba(255, 77, 0, 0.4);
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 12px;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+#stars-canvas { position: fixed; inset: 0; z-index: -1; }
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); z-index: 1000; width: 0%; }
+
+.nav { position: fixed; top: 0; left: 0; right: 0; height: 70px; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; z-index: 100; border-bottom: 1px solid var(--border); }
+.nav__logo { font-weight: 900; letter-spacing: 2px; }
+.nav__logo span { color: var(--accent); }
+.nav__links { display: flex; gap: 1.5rem; list-style: none; }
+.nav__links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+.nav__links a:hover { color: var(--accent); }
+
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 5%; gap: 5%; background: radial-gradient(circle at 80% 50%, rgba(255, 77, 0, 0.05) 0%, transparent 50%); }
+.hero h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 0.9; margin-bottom: 1.5rem; font-weight: 900; }
+.hero__desc { font-size: 1.2rem; color: var(--muted); margin-bottom: 2.5rem; max-width: 600px; }
+
+.btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; transition: var(--transition); display: inline-block; border: none; cursor: pointer; }
+.btn--primary { background: var(--accent); color: white; box-shadow: 0 10px 25px var(--accent-glow); }
+.btn--ghost { border: 1px solid var(--border); color: white; margin-left: 1rem; }
+
+.planet-wrap { width: 400px; height: 400px; animation: float 6s infinite ease-in-out; }
+.mars-planet { width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #ff6a00, #b03000, #200000); box-shadow: inset -20px -20px 50px rgba(0,0,0,0.8), 0 0 50px var(--accent-glow); }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+.section { padding: 80px 5%; }
+.section__inner { max-width: 1100px; margin: 0 auto; }
+.section__label { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; margin-bottom: 1rem; font-weight: 800; }
+.section h2 { font-size: 3rem; margin-bottom: 2.5rem; font-weight: 800; }
+
+.glass-card { background: var(--surface); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: var(--transition); }
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Moons */
+.moons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.moon-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid var(--border); }
+
+.mission-card { display: grid; grid-template-columns: 250px 1fr; gap: 1.5rem; align-items: center; }
+.mission-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); }
+.mission-card__content { display: flex; flex-direction: column; gap: 0.75rem; }
+.btn--mini { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.2rem; border-radius: 999px; border: 1px solid var(--accent); background: rgba(255, 77, 0, 0.1); color: var(--accent); font-weight: 700; text-decoration: none; width: fit-content; }
+.timeline-item { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: var(--radius); }
+.timeline-item__year { font-weight: 900; color: var(--accent); font-size: 1.1rem; }
+.timeline-item__text { color: var(--muted); line-height: 1.5; }
+.timeline-btn { align-self: flex-start; }
+
+.interesting-list { display: grid; gap: 1.5rem; }
+.interesting-card { display: grid; grid-template-columns: 1fr; gap: 1.25rem; align-items: stretch; }
+.interesting-card__body { display: flex; flex-direction: column; gap: 0.75rem; }
+.interesting-subtitle { color: var(--muted); font-size: 0.95rem; }
+
+/* Craters */
+.craters-list { display: grid; gap: 1.5rem; }
+.crater-item { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.crater-content { display: flex; align-items: center; gap: 1.5rem; }
+.crater-mini-img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); }
+.link-btn { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem; border: 1px solid var(--accent); padding: 0.6rem 1.2rem; border-radius: 8px; transition: 0.3s; }
+.link-btn:hover { background: var(--accent); color: white; }
+
+/* Missions */
+.mission-list { display: grid; gap: 1.5rem; }
+.mission-row { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.m-main { display: flex; align-items: center; gap: 1.5rem; }
+.mission-mini-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); }
+.m-name { font-weight: 900; color: var(--accent); font-size: 1.3rem; }
+.m-agency { color: var(--muted); font-size: 0.85rem; margin-left: 0.5rem; }
+.m-goal { color: var(--text); margin-top: 0.5rem; }
+.m-status { background: rgba(255, 77, 0, 0.1); color: var(--accent); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--accent); }
+
+/* Timeline Simple */
+.timeline-simple { display: grid; gap: 1.5rem; }
+.timeline-row { display: grid; grid-template-columns: 80px 180px 1fr 100px; gap: 1.5rem; align-items: center; padding: 1rem; border-bottom: 1px solid var(--border); }
+.t-year { font-weight: 900; color: var(--accent); font-size: 1.2rem; }
+.t-who { font-weight: 700; color: white; }
+.t-what { color: var(--muted); }
+.t-link { color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-align: right; }
+
+/* Interesting List */
+.interesting-list { display: grid; gap: 1.5rem; }
+.interesting-item h3 { color: var(--accent); margin-bottom: 0.5rem; }
+.link-more { color: var(--accent); text-decoration: none; font-weight: 700; margin-top: 1rem; display: inline-block; font-size: 0.9rem; }
+
+footer { padding: 5rem 5%; border-top: 1px solid var(--border); background: #000; }
+.footer-content { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.author-links { display: flex; gap: 1rem; margin-top: 1rem; }
+.author-link { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+.copyright { border-top: 1px solid var(--border); padding-top: 2rem; font-size: 0.8rem; color: #444; text-align: center; }
+
+@media (max-width: 900px) {
+  .hero, .moons-grid, .crater-item, .mission-row, .timeline-row, .footer-content, .interesting-card { display: flex; flex-direction: column; text-align: center; }
+  .timeline-row { gap: 0.5rem; }
+  .t-link { text-align: center; }
+  .planet-wrap { width: 300px; height: 300px; }
+  .nav__links { display: none; }
+}
+
+@media (max-width: 700px) {
+  .interesting-card { grid-template-columns: 1fr; }
+  .mission-card { grid-template-columns: 1fr; }
+}
